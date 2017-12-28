@@ -2,6 +2,7 @@
     <input
         ref="autocomplete"
         type="text"
+	:name="name"
         :class="classname"
         :id="id"
         :placeholder="placeholder"
@@ -40,6 +41,11 @@
             default: null
           },
 
+          name: {
+            type: [String, Array],
+            default: 'autocomplete'
+          },
+	  
           enableGeolocation: {
             type: Boolean,
             default: false
@@ -153,8 +159,8 @@
             /**
              * When the input got changed
              */
-            onChange() {
-              this.$emit('change', this.autocompleteText);
+            onChange(event) {
+              this.$emit('change', this.autocompleteText,event);
             },
 
             /**
