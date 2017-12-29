@@ -34,6 +34,11 @@
             type: String,
             default: 'address'
           },
+	  
+	  inputName: {
+	   type: [String, Array],
+            default:'complete'
+	  },
 
           country: {
             type: [String, Array],
@@ -153,8 +158,8 @@
             /**
              * When the input got changed
              */
-            onChange() {
-              this.$emit('change', this.autocompleteText);
+            onChange(event) {
+              this.$emit('change', this.autocompleteText, event);
             },
 
             /**
