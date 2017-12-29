@@ -4,6 +4,7 @@
         type="text"
         :class="classname"
         :id="id"
+	:name="inputName"
         :placeholder="placeholder"
         v-model="autocompleteText"
         @focus="onFocus()"
